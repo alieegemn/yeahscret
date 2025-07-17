@@ -92,7 +92,7 @@ Welcome2.BorderSizePixel = 0
 Welcome2.Position = UDim2.new(0.0245891828, 0, 0.114000015, 0)
 Welcome2.Size = UDim2.new(0, 428, 0, 36)
 Welcome2.Font = Enum.Font.SourceSansBold
-Welcome2.Text = "FIRST TYPE REANIM ON QCMD SOON ITWILL BE AUTO"
+Welcome2.Text = "more comming soon"
 Welcome2.TextColor3 = Color3.fromRGB(0, 0, 0)
 Welcome2.TextSize = 20.000
 
@@ -253,7 +253,7 @@ Respawn.BackgroundColor3 = Color3.fromRGB(119, 221, 119)
 Respawn.Position = UDim2.new(0.720000029, 0, 0.915730357, 0)
 Respawn.Size = UDim2.new(0, 115, 0, 35)
 Respawn.Font = Enum.Font.SourceSansBold
-Respawn.Text = "Respawn but reset normal cus its just dont works for now"
+Respawn.Text = "Respawn"
 Respawn.TextColor3 = Color3.fromRGB(0, 128, 0)
 Respawn.TextSize = 30.000
 
