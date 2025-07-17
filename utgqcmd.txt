@@ -253,7 +253,7 @@ Respawn.BackgroundColor3 = Color3.fromRGB(119, 221, 119)
 Respawn.Position = UDim2.new(0.720000029, 0, 0.915730357, 0)
 Respawn.Size = UDim2.new(0, 115, 0, 35)
 Respawn.Font = Enum.Font.SourceSansBold
-Respawn.Text = "duh button"
+Respawn.Text = "Respawn"
 Respawn.TextColor3 = Color3.fromRGB(0, 128, 0)
 Respawn.TextSize = 30.000
 
