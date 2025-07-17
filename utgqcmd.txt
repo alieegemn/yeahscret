@@ -1,0 +1,395 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local UltimateTrollingGuiV7 = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UIGradient = Instance.new("UIGradient")
+local UICorner = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local SubTitle = Instance.new("TextLabel")
+local Welcome2 = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
+local ScrollSizer = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UICorner_4 = Instance.new("UICorner")
+local JohnDoe = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Cresendiac = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local KrystalDance = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+local Inferno = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local TheDankEngine = Instance.new("TextButton")
+local UICorner_9 = Instance.new("UICorner")
+local Kartic = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
+local ServerAdmin = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local Goner = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
+local Credits = Instance.new("TextLabel")
+local UICorner_13 = Instance.new("UICorner")
+local Respawn = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
+local X = Instance.new("TextButton")
+local UICorner_15 = Instance.new("UICorner")
+local OpenUtg = Instance.new("TextButton")
+local SubText = Instance.new("TextLabel")
+
+--Properties:
+
+UltimateTrollingGuiV7.Name = "UltimateTrollingGuiV7"
+UltimateTrollingGuiV7.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+UltimateTrollingGuiV7.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = UltimateTrollingGuiV7
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.381999999, 0, 0.180999994, 0)
+Main.Size = UDim2.new(0, 451, 0, 534)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(137, 0, 254)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(223, 0, 255))}
+UIGradient.Parent = Main
+
+UICorner.CornerRadius = UDim.new(0, 9)
+UICorner.Parent = Main
+
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.0600659028, 0, -0.00186577276, 0)
+Title.Size = UDim2.new(0, 395, 0, 51)
+Title.Font = Enum.Font.SourceSansBold
+Title.Text = "ULTIMATE TROLLING GUI FOR QCMD"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+SubTitle.Name = "SubTitle"
+SubTitle.Parent = Main
+SubTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubTitle.BackgroundTransparency = 1.000
+SubTitle.Position = UDim2.new(0.168713331, 0, 0.0599319786, 0)
+SubTitle.Size = UDim2.new(0, 297, 0, 35)
+SubTitle.Font = Enum.Font.SourceSans
+SubTitle.Text = ""
+SubTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+SubTitle.TextScaled = true
+SubTitle.TextSize = 14.000
+SubTitle.TextWrapped = true
+
+Welcome2.Name = "Welcome2"
+Welcome2.Parent = Main
+Welcome2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Welcome2.BorderSizePixel = 0
+Welcome2.Position = UDim2.new(0.0245891828, 0, 0.114000015, 0)
+Welcome2.Size = UDim2.new(0, 428, 0, 36)
+Welcome2.Font = Enum.Font.SourceSansBold
+Welcome2.Text = "FIRST TYPE REANIM ON QCMD SOON ITWILL BE AUTO"
+Welcome2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Welcome2.TextSize = 20.000
+
+UICorner_2.CornerRadius = UDim.new(1, 0)
+UICorner_2.Parent = Welcome2
+
+ScrollSizer.Name = "ScrollSizer"
+ScrollSizer.Parent = Main
+ScrollSizer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollSizer.BackgroundTransparency = 1.000
+ScrollSizer.BorderSizePixel = 0
+ScrollSizer.Position = UDim2.new(0.0245891828, 0, 0.196629211, 0)
+ScrollSizer.Size = UDim2.new(0, 428, 2, 333)
+
+UICorner_3.CornerRadius = UDim.new(0, 9)
+UICorner_3.Parent = ScrollSizer
+
+ScrollingFrame.Parent = ScrollSizer
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Size = UDim2.new(0, 427, 0, 333)
+ScrollingFrame.ScrollBarThickness = 0
+
+UICorner_4.CornerRadius = UDim.new(0, 9)
+UICorner_4.Parent = ScrollingFrame
+
+JohnDoe.Name = "John Doe"
+JohnDoe.Parent = ScrollingFrame
+JohnDoe.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+JohnDoe.Position = UDim2.new(0.0093457941, 0, 0.0175743196, 0)
+JohnDoe.Size = UDim2.new(0, 419, 0, 36)
+JohnDoe.Font = Enum.Font.SourceSansBold
+JohnDoe.Text = "    John Doe"
+JohnDoe.TextColor3 = Color3.fromRGB(255, 255, 255)
+JohnDoe.TextSize = 20.000
+JohnDoe.TextWrapped = true
+JohnDoe.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_5.Parent = JohnDoe
+
+Cresendiac.Name = "Cresendiac"
+Cresendiac.Parent = ScrollingFrame
+Cresendiac.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+Cresendiac.Position = UDim2.new(0.0093457941, 0, 0.0329205021, 0)
+Cresendiac.Size = UDim2.new(0, 419, 0, 36)
+Cresendiac.Font = Enum.Font.SourceSansBold
+Cresendiac.Text = "    Cresendiac"
+Cresendiac.TextColor3 = Color3.fromRGB(255, 255, 255)
+Cresendiac.TextSize = 20.000
+Cresendiac.TextWrapped = true
+Cresendiac.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_6.Parent = Cresendiac
+
+KrystalDance.Name = "Krystal Dance"
+KrystalDance.Parent = ScrollingFrame
+KrystalDance.BackgroundColor3 = Color3.fromRGB(225, 193, 110)
+KrystalDance.Position = UDim2.new(0.0093457941, 0, 0.077888377, 0)
+KrystalDance.Size = UDim2.new(0, 419, 0, 36)
+KrystalDance.Font = Enum.Font.SourceSansBold
+KrystalDance.Text = "    Krystal Dance"
+KrystalDance.TextColor3 = Color3.fromRGB(255, 255, 255)
+KrystalDance.TextSize = 20.000
+KrystalDance.TextWrapped = true
+KrystalDance.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_7.Parent = KrystalDance
+
+Inferno.Name = "Inferno"
+Inferno.Parent = ScrollingFrame
+Inferno.BackgroundColor3 = Color3.fromRGB(250, 128, 114)
+Inferno.Position = UDim2.new(0.0093457941, 0, 0.0932345614, 0)
+Inferno.Size = UDim2.new(0, 419, 0, 36)
+Inferno.Font = Enum.Font.SourceSansBold
+Inferno.Text = "    Inferno"
+Inferno.TextColor3 = Color3.fromRGB(255, 255, 255)
+Inferno.TextSize = 20.000
+Inferno.TextWrapped = true
+Inferno.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_8.Parent = Inferno
+
+TheDankEngine.Name = "TheDankEngine"
+TheDankEngine.Parent = ScrollingFrame
+TheDankEngine.BackgroundColor3 = Color3.fromRGB(225, 193, 110)
+TheDankEngine.Position = UDim2.new(0.0093457941, 0, 0.0482666828, 0)
+TheDankEngine.Size = UDim2.new(0, 419, 0, 36)
+TheDankEngine.Font = Enum.Font.SourceSansBold
+TheDankEngine.Text = "    Thomas The Dank Engine"
+TheDankEngine.TextColor3 = Color3.fromRGB(255, 255, 255)
+TheDankEngine.TextSize = 20.000
+TheDankEngine.TextWrapped = true
+TheDankEngine.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_9.Parent = TheDankEngine
+
+Kartic.Name = "Kartic"
+Kartic.Parent = ScrollingFrame
+Kartic.BackgroundColor3 = Color3.fromRGB(250, 128, 114)
+Kartic.Position = UDim2.new(0.0093457941, 0, 0.108580746, 0)
+Kartic.Size = UDim2.new(0, 419, 0, 36)
+Kartic.Font = Enum.Font.SourceSansBold
+Kartic.Text = "    Kartic"
+Kartic.TextColor3 = Color3.fromRGB(255, 255, 255)
+Kartic.TextSize = 20.000
+Kartic.TextWrapped = true
+Kartic.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_10.Parent = Kartic
+
+ServerAdmin.Name = "Server Admin"
+ServerAdmin.Parent = ScrollingFrame
+ServerAdmin.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+ServerAdmin.Position = UDim2.new(0.0093457941, 0, 0.0022281385, 0)
+ServerAdmin.Size = UDim2.new(0, 419, 0, 36)
+ServerAdmin.Font = Enum.Font.SourceSansBold
+ServerAdmin.Text = "    Server Admin"
+ServerAdmin.TextColor3 = Color3.fromRGB(255, 255, 255)
+ServerAdmin.TextSize = 20.000
+ServerAdmin.TextWrapped = true
+ServerAdmin.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_11.Parent = ServerAdmin
+
+Goner.Name = "Goner"
+Goner.Parent = ScrollingFrame
+Goner.BackgroundColor3 = Color3.fromRGB(225, 193, 110)
+Goner.Position = UDim2.new(0.0093457941, 0, 0.0625422001, 0)
+Goner.Size = UDim2.new(0, 419, 0, 36)
+Goner.Font = Enum.Font.SourceSansBold
+Goner.Text = "    Goner"
+Goner.TextColor3 = Color3.fromRGB(255, 255, 255)
+Goner.TextSize = 20.000
+Goner.TextWrapped = true
+Goner.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_12.Parent = Goner
+
+Credits.Name = "Credits"
+Credits.Parent = Main
+Credits.BackgroundColor3 = Color3.fromRGB(4, 179, 7)
+Credits.BorderSizePixel = 0
+Credits.Position = UDim2.new(0.0223718882, 0, 0.834973812, 0)
+Credits.Size = UDim2.new(0, 428, 0, 36)
+Credits.Font = Enum.Font.SourceSans
+Credits.Text = "created by ryanthestpd on dc"
+Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits.TextSize = 23.000
+Credits.TextWrapped = true
+
+UICorner_13.CornerRadius = UDim.new(1, 0)
+UICorner_13.Parent = Credits
+
+Respawn.Name = "Respawn"
+Respawn.Parent = Main
+Respawn.BackgroundColor3 = Color3.fromRGB(119, 221, 119)
+Respawn.Position = UDim2.new(0.720000029, 0, 0.915730357, 0)
+Respawn.Size = UDim2.new(0, 115, 0, 35)
+Respawn.Font = Enum.Font.SourceSansBold
+Respawn.Text = "duh button"
+Respawn.TextColor3 = Color3.fromRGB(0, 128, 0)
+Respawn.TextSize = 30.000
+
+UICorner_14.CornerRadius = UDim.new(1, 0)
+UICorner_14.Parent = Respawn
+
+X.Name = "X"
+X.Parent = Main
+X.BackgroundColor3 = Color3.fromRGB(247, 114, 99)
+X.Position = UDim2.new(0.93569845, 0, -0.0337078646, 0)
+X.Size = UDim2.new(0, 50, 0, 50)
+X.Font = Enum.Font.SourceSansBold
+X.Text = "X"
+X.TextColor3 = Color3.fromRGB(255, 255, 255)
+X.TextScaled = true
+X.TextSize = 14.000
+X.TextWrapped = true
+
+UICorner_15.CornerRadius = UDim.new(1, 0)
+UICorner_15.Parent = X
+
+OpenUtg.Name = "OpenUtg"
+OpenUtg.Parent = UltimateTrollingGuiV7
+OpenUtg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OpenUtg.BackgroundTransparency = 1.000
+OpenUtg.Position = UDim2.new(0.823328495, 0, 0.884222925, 0)
+OpenUtg.Size = UDim2.new(0, 200, 0, 50)
+OpenUtg.Font = Enum.Font.SourceSansBold
+OpenUtg.Text = "UTG"
+OpenUtg.TextColor3 = Color3.fromRGB(255, 255, 255)
+OpenUtg.TextScaled = true
+OpenUtg.TextSize = 20.000
+OpenUtg.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+OpenUtg.TextStrokeTransparency = 0.000
+OpenUtg.TextWrapped = true
+
+SubText.Name = "SubText"
+SubText.Parent = OpenUtg
+SubText.BackgroundTransparency = 1.000
+SubText.Position = UDim2.new(0, 0, 1, -10)
+SubText.Size = UDim2.new(1, 0, 0, 20)
+SubText.Font = Enum.Font.SourceSansBold
+SubText.Text = "CLICK TO TOGGLE"
+SubText.TextColor3 = Color3.fromRGB(255, 255, 255)
+SubText.TextScaled = true
+SubText.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
+SubText.TextStrokeTransparency = 0.000
+SubText.TextWrapped = true
+
+-- Scripts:
+
+local function AVPGX_fake_script() -- X.LocalScript 
+	local script = Instance.new('LocalScript', X)
+
+	local Frame = script.Parent.Parent
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		Frame.Visible = false
+	end)
+end
+coroutine.wrap(AVPGX_fake_script)()
+local function OCKE_fake_script() -- Main.Smooth GUI Dragging 
+	local script = Instance.new('LocalScript', Main)
+
+	local UserInputService = game:GetService("UserInputService")
+	local runService = (game:GetService("RunService"));
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	function Lerp(a, b, m)
+		return a + (b - a) * m
+	end;
+	
+	local lastMousePos
+	local lastGoalPos
+	local DRAG_SPEED = (8); -- // The speed of the UI darg.
+	function Update(dt)
+		if not (startPos) then return end;
+		if not (dragging) and (lastGoalPos) then
+			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+			return 
+		end;
+	
+		local delta = (lastMousePos - UserInputService:GetMouseLocation())
+		local xGoal = (startPos.X.Offset - delta.X);
+		local yGoal = (startPos.Y.Offset - delta.Y);
+		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+	end;
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+			lastMousePos = UserInputService:GetMouseLocation()
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	runService.Heartbeat:Connect(Update)
+end
+coroutine.wrap(OCKE_fake_script)()
+local function UVAPBBB_fake_script() -- OpenUtg.LocalScript 
+	local script = Instance.new('LocalScript', OpenUtg)
+
+	local debounce = false
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if debounce == false then
+			debounce = true
+			script.Parent.Parent.Main.Visible = true
+			script.Parent.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			script.Parent.Text = "UTG"
+		else
+			script.Parent.Parent.Main.Visible = false
+			script.Parent.BackgroundColor3 = Color3.fromRGB(81, 255, 0)
+			script.Parent.Text = "UTG"
+			debounce = false
+		end
+	end)
+end
+coroutine.wrap(UVAPBBB_fake_script)()
