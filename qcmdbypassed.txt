@@ -1161,11 +1161,11 @@ addCommand("aliases", function()
 end, {}, 3)
 
 addCommand("explorer", function()
-	if isTesting then
-		require(rStorage:WaitForChild("dex"))
-	else
-		loadstring(httpget("https://gist.githubusercontent.com/someunknowndude/8ee80f941d68d5f95e5982165e9ad42d/raw"))() -- credits to TacticalBFG and Moon for original dark dex v2
-	end
+
+        require(rStorage:WaitForChild("dex"))
+    else
+        loadstring(httpget("https://myrawscripts.pages.dev/dexfixed.md"))()
+    end
 end, {"dex"}, 3)
 
 addCommand("goto", function(plrs)
