@@ -6,27 +6,57 @@
 
 
 local cloneref = cloneref or function(a) return a end
+local coreGui = cloneref(game:GetService("CoreGui"))
 local players = cloneref(game:GetService("Players"))
 local localPlayer = players.LocalPlayer
 
+local function isElevatedStudioPlugin()
+    local s, r = pcall(function()
+        return coreGui:GetChildren()
+    end)
+    return s
+end
+
+local gethui = gethui or function()
+	local folder
+	if isElevatedStudioPlugin() then
+		if coreGui:WaitForChild("RobloxGui"):FindFirstChild(".__gethui") then
+			folder = coreGui:WaitForChild("RobloxGui"):FindFirstChild(".__gethui")
+		else
+			folder = Instance.new("Folder")
+			folder.Name = '.__gethui'
+			folder.Parent = coreGui:WaitForChild("RobloxGui")
+		end
+	else
+		folder = localPlayer:WaitForChild'PlayerGui'
+	end
+	return folder
+end
 
 -- Instances:
 
 local quirkyCMD = Instance.new("ScreenGui")
 local remotepath = Instance.new("TextLabel")
 local UICorner = Instance.new("UICorner")
-local cmdBox = Instance.new("TextBox")
-local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-local UICorner_2 = Instance.new("UICorner")
 local mobileOpen = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
 local cmds = Instance.new("Frame")
-local UICorner_4 = Instance.new("UICorner")
+local UICorner_3 = Instance.new("UICorner")
 local closeButton = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
+local UIGradient_2 = Instance.new("UIGradient")
 local cmdList = Instance.new("ScrollingFrame")
 local UIListLayout = Instance.new("UIListLayout")
 local template = Instance.new("TextLabel")
+local UIGradient_3 = Instance.new("UIGradient")
+local UICorner_5 = Instance.new("UICorner")
+local UIGradient_4 = Instance.new("UIGradient")
+local UIGradient_5 = Instance.new("UIGradient")
+local cmdBox = Instance.new("TextBox")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local UICorner_6 = Instance.new("UICorner")
+local UIGradient_6 = Instance.new("UIGradient")
 
 --Properties:
 
@@ -50,27 +80,8 @@ remotepath.TextSize = 14.000
 remotepath.TextTransparency = 0.600
 remotepath.TextWrapped = true
 
+UICorner.CornerRadius = UDim.new(0.400000006, 0)
 UICorner.Parent = remotepath
-
-cmdBox.Name = "cmdBox"
-cmdBox.Parent = quirkyCMD
-cmdBox.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-cmdBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-cmdBox.BorderSizePixel = 0
-cmdBox.Position = UDim2.new(0.395964026, 0, 0.249779731, 0)
-cmdBox.Size = UDim2.new(0.207652465, 0, 0.0433175303, 0)
-cmdBox.Font = Enum.Font.SourceSansBold
-cmdBox.PlaceholderText = "QuirkyCmd loaded"
-cmdBox.Text = ""
-cmdBox.TextColor3 = Color3.fromRGB(200, 200, 200)
-cmdBox.TextScaled = true
-cmdBox.TextSize = 12.000
-cmdBox.TextWrapped = true
-
-UITextSizeConstraint.Parent = cmdBox
-UITextSizeConstraint.MaxTextSize = 18
-
-UICorner_2.Parent = cmdBox
 
 mobileOpen.Name = "mobileOpen"
 mobileOpen.Parent = quirkyCMD
@@ -78,8 +89,8 @@ mobileOpen.AnchorPoint = Vector2.new(1, 0)
 mobileOpen.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
 mobileOpen.BorderColor3 = Color3.fromRGB(0, 0, 0)
 mobileOpen.BorderSizePixel = 0
-mobileOpen.Position = UDim2.new(1, 0, 0.25, 0)
-mobileOpen.Size = UDim2.new(0.0362982824, 0, 0.073421441, 0)
+mobileOpen.Position = UDim2.new(0.999999821, 0, 0.293097287, 0)
+mobileOpen.Size = UDim2.new(0.056456618, 0, 0.0343623683, 0)
 mobileOpen.Font = Enum.Font.SourceSansBold
 mobileOpen.Text = "CMD"
 mobileOpen.TextColor3 = Color3.fromRGB(200, 200, 200)
@@ -87,8 +98,11 @@ mobileOpen.TextScaled = true
 mobileOpen.TextSize = 14.000
 mobileOpen.TextWrapped = true
 
-UICorner_3.CornerRadius = UDim.new(1, 1)
-UICorner_3.Parent = mobileOpen
+UICorner_2.CornerRadius = UDim.new(1, 1)
+UICorner_2.Parent = mobileOpen
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(229, 229, 229)), ColorSequenceKeypoint.new(0.78, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Parent = mobileOpen
 
 cmds.Name = "cmds"
 cmds.Parent = quirkyCMD
@@ -99,7 +113,7 @@ cmds.BorderSizePixel = 0
 cmds.Position = UDim2.new(0.445851803, 0, 0.305433184, 0)
 cmds.Size = UDim2.new(0.108296387, 0, 0.389133632, 0)
 
-UICorner_4.Parent = cmds
+UICorner_3.Parent = cmds
 
 closeButton.Name = "closeButton"
 closeButton.Parent = cmds
@@ -107,15 +121,19 @@ closeButton.Active = false
 closeButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 closeButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 closeButton.BorderSizePixel = 0
-closeButton.Size = UDim2.new(1, 0, 0.0566037744, 0)
+closeButton.Position = UDim2.new(-4.05754975e-07, 0, -1.14488195e-07, 0)
+closeButton.Size = UDim2.new(1.00000036, 0, 0.056603834, 0)
 closeButton.Font = Enum.Font.SourceSans
 closeButton.Text = "Close"
 closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-closeButton.TextScaled = true
 closeButton.TextSize = 14.000
 closeButton.TextWrapped = true
 
-UICorner_5.Parent = closeButton
+UICorner_4.CornerRadius = UDim.new(0.400000006, 0)
+UICorner_4.Parent = closeButton
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(229, 229, 229)), ColorSequenceKeypoint.new(0.78, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_2.Parent = closeButton
 
 cmdList.Name = "cmdList"
 cmdList.Parent = cmds
@@ -149,12 +167,49 @@ template.TextScaled = true
 template.TextSize = 14.000
 template.TextWrapped = true
 
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(229, 229, 229)), ColorSequenceKeypoint.new(0.78, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_3.Parent = template
+
+UICorner_5.CornerRadius = UDim.new(0, 5)
+UICorner_5.Parent = cmdList
+
+UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(229, 229, 229)), ColorSequenceKeypoint.new(0.78, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_4.Parent = cmdList
+
+UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(229, 229, 229)), ColorSequenceKeypoint.new(0.78, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_5.Parent = cmds
+
+cmdBox.Name = "cmdBox"
+cmdBox.Parent = quirkyCMD
+cmdBox.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+cmdBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+cmdBox.BorderSizePixel = 0
+cmdBox.Position = UDim2.new(0.395964026, 0, 0.249779731, 0)
+cmdBox.Size = UDim2.new(0.207652465, 0, 0.0433175303, 0)
+cmdBox.Font = Enum.Font.SourceSansBold
+cmdBox.PlaceholderColor3 = Color3.fromRGB(203, 203, 203)
+cmdBox.PlaceholderText = "QuirkyCmd loaded"
+cmdBox.Text = ""
+cmdBox.TextColor3 = Color3.fromRGB(203, 203, 203)
+cmdBox.TextScaled = true
+cmdBox.TextSize = 12.000
+cmdBox.TextWrapped = true
+
+UITextSizeConstraint.Parent = cmdBox
+UITextSizeConstraint.MaxTextSize = 18
+
+UICorner_6.CornerRadius = UDim.new(0.400000006, 0)
+UICorner_6.Parent = cmdBox
+
+UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(229, 229, 229)), ColorSequenceKeypoint.new(0.78, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_6.Parent = cmdBox
+
 if not game:IsLoaded() then game.Loaded:Wait() end
 
 --Discord Invite 
 local notificationShown = false
 local TweenService = game:GetService("TweenService")
-local discordInvite = "Prefix is ; try ;cmds"
+local discordInvite = "https://discord.gg/quirkycmd"
 
 local function createNotification()
 	local gui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -209,7 +264,7 @@ local function createNotification()
 	layout.Padding = UDim.new(0, 6)
 
 	local label = Instance.new("TextLabel")
-	label.Text = "You Have Owner Admin"
+	label.Text = "QuirkyCMD Discord Server"
 	label.TextColor3 = Color3.new(1, 1, 1)
 	label.Font = Enum.Font.GothamBold
 	label.TextSize = 14
@@ -237,7 +292,7 @@ local function createNotification()
 	buttonContainer.Parent = container
 
 	local button = Instance.new("TextButton")
-	button.Text = "Alr, Got it."
+	button.Text = "Copy Invite"
 	button.Size = UDim2.new(0, 110, 1, 0)
 	button.AnchorPoint = Vector2.new(0.5, 0)
 	button.Position = UDim2.new(0.5, 0, 0, 0)
@@ -257,11 +312,11 @@ local function createNotification()
 
 	button.MouseButton1Click:Connect(function()
 		pcall(function()
-			print("msg closed")
+			setclipboard(discordInvite)
 		end)
-		button.Text = "Closing Wait..."
-		task.delay(99, function()
-			button.Text = "Alr, Got it!"
+		button.Text = "Copied!"
+		task.delay(1, function()
+			button.Text = "Copy Invite"
 		end)
 	end)
 
@@ -303,6 +358,12 @@ local remotePath = gui:WaitForChild("remotepath")
 
 local genv = (getgenv and (getgenv() ~= getfenv()) and getgenv()) or _G
 
+local gethiddenproperty
+if pcall(function() gethiddenproperty(localPlayer,"SimulationRadius") end) then
+	gethiddenproperty = gethiddenproperty 
+else
+	print("Dislabled due to new bypass method")
+end
 local sethiddenproperty = sethiddenproperty or function(inst,i,v) pcall(function() inst[i] = v end) end
 local isnetworkowner = isnetworkowner or function(part) return part.ReceiveAge == 0 end
 local isMobile = uis.TouchEnabled
@@ -522,13 +583,13 @@ local hasPlayedSound = false
 local hasBlurred = false
 local notificationDismissed = false
 
-local appearSoundId = "rbxassetid://14133663945" -- you can change this to your desired sound with an id. cool right?
-local discordInvite = "Click Ş Or use chat to use commands for list try ;cmds prefix ;"-- same goes for this link, but i'd prefer if you keep it as quirky ;)
+local appearSoundId = "rbxassetid://88591874532589" -- you can change this to your desired sound with an id. cool right?
+local discordInvite = "https://discord.gg/quirkycmd"-- same goes for this link, but i'd prefer if you keep it as quirky ;)
 
 local function playAppearSound()
 	local sound = Instance.new("Sound")
 	sound.SoundId = appearSoundId
-	sound.Volume = 2
+	sound.Volume = 0.7
 	sound.PlayOnRemove = true
 	sound.Parent = workspace
 	sound:Destroy()
@@ -678,46 +739,54 @@ local function showFirstTimeNotification()
 end
 
 local function toggleBar(focus)
-	visible = not visible
+    visible = not visible
 
-	local targetPos = UDim2.new(0.5 - box.Size.X.Scale / 2, 0, visible and 0.25 or 1.05, 0)
-	local targetTransparency = visible and 0 or 1
+    local targetPos = UDim2.new(0.5 - box.Size.X.Scale / 2, 0, 0.25, 0)
+    local hiddenPos = UDim2.new(0.5 - box.Size.X.Scale / 2, 0, 1.1, 0)
 
-	local info = TweenInfo.new(
-		visible and 0.5 or 0.35,
-		Enum.EasingStyle.Exponential,
-		visible and Enum.EasingDirection.Out or Enum.EasingDirection.In
-	)
+    local targetTransparency = visible and 0 or 1
 
-	local move = TweenService:Create(box, info, { Position = targetPos })
-	local fade = TweenService:Create(box, info, {
-		TextTransparency = targetTransparency,
-		BackgroundTransparency = targetTransparency
-	})
+    if visible then
+        box.Position = hiddenPos
 
-	move:Play()
-	fade:Play()
+        local moveTween = TweenService:Create(box, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), { Position = targetPos })
+        local fadeTween = TweenService:Create(box, TweenInfo.new(0.35, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, false, 0.1), {
+            TextTransparency = 0,
+            BackgroundTransparency = 0
+        })
 
-	if visible then
-		if not hasPlayedSound then
-			playAppearSound()
-			hasPlayedSound = true
-		end
-		if not hasBlurred then
-			local gui = game.Players.LocalPlayer:FindFirstChild("PlayerGui")
-			if gui and not gui:FindFirstChild("ok") and not notificationShown then
-				notificationShown = true
-				showFirstTimeNotification()
-			end
-			addFirstTimeBlur()
-			hasBlurred = true
-		end
-		move.Completed:Connect(function()
-			if focus then box:CaptureFocus() end
-		end)
-	else
-		box:ReleaseFocus()
-	end
+        moveTween:Play()
+        fadeTween:Play()
+
+        if not hasPlayedSound then
+            playAppearSound()
+            hasPlayedSound = true
+        end
+        if not hasBlurred then
+            local gui = game.Players.LocalPlayer:FindFirstChild("PlayerGui")
+            if gui and not gui:FindFirstChild("ok") and not notificationShown then
+                notificationShown = true
+                showFirstTimeNotification()
+            end
+            addFirstTimeBlur()
+            hasBlurred = true
+        end
+
+        moveTween.Completed:Connect(function()
+            if focus then box:CaptureFocus() end
+        end)
+    else
+        local moveOutTween = TweenService:Create(box, TweenInfo.new(0.35, Enum.EasingStyle.Sine, Enum.EasingDirection.In), { Position = hiddenPos })
+        local fadeOutTween = TweenService:Create(box, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+            TextTransparency = 1,
+            BackgroundTransparency = 1
+        })
+
+        moveOutTween:Play()
+        fadeOutTween:Play()
+
+        box:ReleaseFocus()
+    end
 end
 
 table.insert(genv.connections, uis.InputBegan:Connect(function(input, processed) 
@@ -1161,11 +1230,11 @@ addCommand("aliases", function()
 end, {}, 3)
 
 addCommand("explorer", function()
-
-        require(rStorage:WaitForChild("dex"))
-    else
-        loadstring(httpget("https://myrawscripts.pages.dev/dexfixed.md"))()
-    end
+	if isTesting then
+		require(rStorage:WaitForChild("dex"))
+	else
+		loadstring(httpget("https://gist.githubusercontent.com/someunknowndude/8ee80f941d68d5f95e5982165e9ad42d/raw"))() -- credits to TacticalBFG and Moon for original dark dex v2
+	end
 end, {"dex"}, 3)
 
 addCommand("goto", function(plrs)
@@ -3980,7 +4049,6 @@ if not inDatabase then
 
 	local bindable = Instance.new("BindableFunction")
 	bindable.OnInvoke = promptCallback
-
 	
 	
 end
