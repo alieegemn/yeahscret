@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://hackmanhubscriptbase.pages.dev/script.md"))()
+loadstring(game:HttpGet("https://hackmanhubscriptbase.pages.dev/script.txt"))()
