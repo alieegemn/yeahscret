@@ -1,3 +1,103 @@
+
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "Pay To Win",
+    SubTitle = "by HackManHub",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
+})
+
+--Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "tool-case" }),
+	Farm = Window:AddTab({ Title = "Farm", Icon = "badge-dollar-sign" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+
+do
+    Fluent:Notify({
+        Title = "HackManHub | Pay To Win",
+        Content = "Join Discord",
+        SubContent = "https://discord.gg/KmtXAzbDTy", -- Optional
+        Duration = 5 -- Set to nil to make the notification not disappear
+    })
+
+
+
+    Tabs.Main:AddParagraph({
+        Title = "Look Here Soon....",
+        Content = "Empty For Now"
+    })
+end
+
+
+-- Farm toggle
+local Farming = false
+
+local Toggle = Tabs.Farm:AddToggle("FarmToggle", {
+    Title = "Farm Coins",
+    Default = false
+})
+
+Toggle:OnChanged(function()
+    Farming = Options.FarmToggle.Value
+
+    while Farming and Options.FarmToggle.Value do
+        -- Teleport sequence
+        local char = game.Players.LocalPlayer.Character
+        if char and char:FindFirstChild("HumanoidRootPart") then
+            char.HumanoidRootPart.CFrame = CFrame.new(81.664101, 39.175632, -10.867756)
+            wait(0.5)
+            char.HumanoidRootPart.CFrame = CFrame.new(98.681458, 40.252911, -12.746908)
+            wait(0.3)
+            char.HumanoidRootPart.CFrame = CFrame.new(87.719582, 40.389004, -5.462366)
+            wait(0.2)
+            char.HumanoidRootPart.CFrame = CFrame.new(79.159164, 43.473896, -16.787405)
+            wait(0.5)
+        else
+            break -- Stop if character or HRP is not found
+        end
+    end
+end)
+
+
+    Tabs.Main:AddButton({
+        Title = "Auto Kill + Farm",
+        Description = "farms coins with kills too and prevents from palyers to kill you",
+        Callback = function()
+      --[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+-- leave a like pls
+
+
+_G.HeadSize = 9999999999999
+_G.Disabled = true
+ 
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 1
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+
 _G.AutoEquip = true
 
 spawn(function()
@@ -18,3 +118,53 @@ spawn(function()
 	end
 end)
 
+
+Fluent:Notify({
+    Title = "WARNING YOU HAVE TO AUTO CLICK hıtbox extandet",
+    Content = "WARNING YOU HaVE TO AUTO CLICK",
+    Duration = 99999
+})
+
+
+        end
+    })
+
+
+
+
+-- Addons:
+-- SaveManager (Allows you to have a configuration system)
+-- InterfaceManager (Allows you to have a interface managment system)
+
+-- Hand the library over to our managers
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+-- Ignore keys that are used by ThemeManager.
+-- (we dont want configs to save themes, do we?)
+SaveManager:IgnoreThemeSettings()
+
+-- You can add indexes of elements the save manager should ignore
+SaveManager:SetIgnoreIndexes({})
+
+-- use case for doing it this way:
+-- a script hub could have themes in a global folder
+-- and game configs in a separate folder per game
+InterfaceManager:SetFolder("HackManHub")
+SaveManager:SetFolder("HackManHub/PayToWin")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+
+Window:SelectTab(1)
+
+Fluent:Notify({
+    Title = "HackManHub",
+    Content = "The script has been loaded.",
+    Duration = 8
+})
+
+-- You can use the SaveManager:LoadAutoloadConfig() to load a config
+-- which has been marked to be one that auto loads!
+SaveManager:LoadAutoloadConfig()
