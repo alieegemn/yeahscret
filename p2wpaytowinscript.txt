@@ -1,0 +1,20 @@
+_G.AutoEquip = true
+
+spawn(function()
+	while true do
+		if _G.AutoEquip then
+			local player = game.Players.LocalPlayer
+			local char = player.Character
+			local backpack = player:FindFirstChild("Backpack")
+
+			if backpack and char then
+				local sword = backpack:FindFirstChild("ClassicSword")
+				if sword and sword:IsA("Tool") and sword.Parent ~= char then
+					sword.Parent = char
+				end
+			end
+		end
+		wait(0.1)
+	end
+end)
+
