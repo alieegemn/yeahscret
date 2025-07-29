@@ -1010,7 +1010,7 @@ event:AddToggle("", {
 	task.spawn(function()
 	while _G.sbazs do
 	task.wait(0.2)
-	local p=game.Players.LocalPlayer if p.Character:FindFirstChildOfClass("Tool") then p.Character:FindFirstChildOfClass("Tool").Parent=p.Backpack game.StarterGui:SetCore("SendNotification", {Title="Aviso", Text="Desative o auto SubmitPlants para pegar um item na mão", Duration=3}) end
+	local p=game.Players.LocalPlayer if p.Character:FindFirstChildOfClass("Tool") then p.Character:FindFirstChildOfClass("Tool").Parent=p.Backpack game.StarterGui:SetCore("SendNotification", {Title="Notice", Text="Disable auto SubmitPlants to pick up an item in hand", Duration=3}) end
         game:GetService("ReplicatedStorage").GameEvents.ZenAuraRemoteEvent:FireServer("SubmitAllPlants")
 	end
 	end)
