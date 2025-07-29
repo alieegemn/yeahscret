@@ -100,7 +100,7 @@ local config = Window:AddTab({
 })
 
 local ui = Window:AddTab({
-    Title = "Interface",
+    Title = "Shop UIs",
     Icon = "rbxassetid://133691553274983"
 })
 
