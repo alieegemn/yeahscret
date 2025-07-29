@@ -42,7 +42,7 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 
 local Window = Fluent:CreateWindow({
     Title = "Grow a Garden |",
-    SubTitle = "Made by HackManHub | Version: INDEV ".. vful,
+    SubTitle = "Made by HackManHub | ".. vful,
     TabWidth = 180,
     Size = UDim2.fromOffset(600, 350),
     Acrylic = false,
