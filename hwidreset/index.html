@@ -2,10 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=https://pandadevelopment.net/reset-hwid?service=hackmanhubreal">
-  <title>Redirecting...</title>
+  <title>Reset HWID Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Work.ink popup ads -->
+  <script src="https://cdn.work.ink/js/redirect.js?id=1200" data-url="https://work.ink/direct/1200" data-max="5"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .continue-button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .continue-button:hover {
+      background-color: #0056b3;
+    }
+
+    .ad-warning {
+      color: red;
+      font-weight: bold;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .adsterra-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 160px;
+      height: 300px;
+      z-index: 9999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 600px) {
+      .adsterra-box {
+        display: none; /* hide on small screens */
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Reset HWID Required</h1>
+    <p>Click the button below to continue. Make sure ad blockers are disabled!</p>
+    <button class="continue-button" onclick="proceed()">Click to Continue</button>
+    <div class="ad-warning" id="adblock-warning">⚠ Please disable AdBlock to continue.</div>
+  </div>
 
+  <!-- Floating Adsterra Ad (160x300) -->
+  <div class="adsterra-box" id="adsterra-ad">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '028f39517473b373c62636ed6a77798e',
+        'format' : 'iframe',
+        'height' : 300,
+        'width' : 160,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/028f39517473b373c62636ed6a77798e/invoke.js"></script>
+  </div>
+
+  <script>
+    function proceed() {
+      window.location.href = "https://pandadevelopment.net/reset-hwid?service=hackmanhubreal";
+    }
+
+    // Adblock detection based on Adsterra box visibility
+    setTimeout(function () {
+      var adBox = document.getElementById("adsterra-ad");
+      if (!adBox || adBox.offsetHeight === 0 || adBox.offsetWidth === 0) {
+        document.getElementById("adblock-warning").style.display = "block";
+      }
+    }, 2000);
+  </script>
 </body>
 </html>
