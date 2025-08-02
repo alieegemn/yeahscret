@@ -116,7 +116,6 @@
       btn.classList.add("enabled");
       btn.style.cursor = "pointer";
       btn.onclick = function () {
-        // Replace with your actual redirect link
         window.location.href = "https://discord.gg/KmtXAzbDTy";
       };
     }
@@ -147,7 +146,7 @@
         if (isBaitBlocked || isAdMissing) {
           clearInterval(countdownTimer);
           disableButton();
-          adblockMsg.style.display = "block";
+          adblockMsg.style.display = "block"; // ✅ always show if detected
         } else {
           startCountdown();
         }
